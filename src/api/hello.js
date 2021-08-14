@@ -28,7 +28,7 @@ export const getHello = async () => {
     }
     const { hello } = await retryResponse.json();
     return hello;
-  } 
+  }
   const { hello } = await response.json();
   return hello;
 }

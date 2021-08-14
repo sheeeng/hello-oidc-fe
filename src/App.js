@@ -4,10 +4,12 @@ import { getAuthenticated, loadLoginScreen, login, logout, validateState } from 
 
 const params = (new URL(document.location)).searchParams;
 const state = params.get('state');
-const code = params.get('code'); 
+const code = params.get('code');
 const auth = getAuthenticated();
 
 export default function App() {
+  console.log("REACT_APP_API_BASE:"+process.env.REACT_APP_API_BASE)
+  console.log("REACT_APP_OIDC_URI_BASE:"+process.env.REACT_APP_OIDC_URI_BASE)
   const [authenticated, setAuthenticated] = useState(auth);
   const [authenticating, setAuthenticating] = useState(code !== null);
   const [hello, setHello] = useState('');
